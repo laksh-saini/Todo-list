@@ -36,7 +36,7 @@ const toggleTaskComplete = (index) => {
 const deleteTask = (index) => {
   tasks.splice(index, 1);
   updateTasksList();
-  updateStats();
+  updateStats(true);
   saveTasks();
 };
 
@@ -49,7 +49,7 @@ const editTask = (index) => {
   saveTasks();
 };
 
-const updateStats = () => {
+const updateStats = (isDelete = false) => {
   const completedTasks = tasks.filter((task) => task.completed).length;
   const totalTasks = tasks.length;
   const progress = (completedTasks / totalTasks) * 100;
@@ -59,11 +59,10 @@ const updateStats = () => {
     "numbers"
   ).innerText = `${completedTasks} / ${totalTasks}`;
 
-  if (tasks.length && completedTasks == totalTasks) {
+  if (!isDelete && tasks.length && completedTasks == totalTasks) {
     blastConfetti();
   }
 };
-
 const updateTasksList = () => {
   const taskList = document.getElementById("task-list");
   taskList.innerHTML = "";
