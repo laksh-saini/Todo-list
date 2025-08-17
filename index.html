@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo app</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="darkmode">
+    <div id="theme">
+      <input type="checkbox" id="theme-check" />
+      <label for="theme-check" class="theme-check"></label>
+    </div>
+
+    <div class="container" id="drop">
+      <div class="stats-container">
+        <div class="details">
+          <h1>Todo App</h1>
+          <p>“The best way out is always through.” – Robert Frost</p>
+          <div id="progressBar">
+            <div id="progress"></div>
+          </div>
+        </div>
+        <div class="stats-numbers">
+          <p id="numbers">0/0</p>
+        </div>
+      </div>
+      <form action="">
+        <input type="text" id="taskInput" placeholder="Write your task" />
+        <button id="newTask" type="submit">+</button>
+      </form>
+      <ul id="task-list"></ul>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+  </body>
+</html>
